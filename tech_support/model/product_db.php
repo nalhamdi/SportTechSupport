@@ -19,21 +19,21 @@
         $statement->bindValue(':productCode', $productCode);
         $statement->execute();
         $products = $statement->fetchAll();
-        $statement->$closeCursor();
+        $statement->closeCursor();
         return $products;
     }
 
     function delete_product($productCode) {
         global $db;
-        $query = 'DELECTE FROM products
+        $query = 'DELETE FROM products
                   WHERE productCode = :productCode';
         $statement = $db->prepare($query);
         $statement->bindValue(':productCode', $productCode);
         $statement->execute();
-        $statement->$closeCursor();
+        $statement->closeCursor();
     }
 
-    function add_products($productCode, $name, $version, $releaseDate){
+    function add_product($productCode, $name, $version, $releaseDate){
         global $db;
         $query = 'INSERT INTO products
                     (productCode, name, version, releaseDate)
