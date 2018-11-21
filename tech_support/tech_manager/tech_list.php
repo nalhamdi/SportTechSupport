@@ -10,22 +10,22 @@
             <th>Phone</th>
             <th>Password</th>
         </tr>
-        <?php foreach ($productCode as $product) : ?>
+        <?php foreach ($techID as $tech) : ?>
         <tr>
             <!-- show product records -->
-            <td><?php echo $product['techID']; ?></td>
-            <td><?php echo $product['firstName']; ?></td>
-            <td><?php echo $product['lastName']; ?></td>
-            <td><?php echo $product['email']; ?></td>
-            <td><?php echo $product['phone']; ?></td>
-            <td><?php echo $product['password']; ?></td>
+            <td><?php echo $tech['techID']; ?></td>
+            <td><?php echo $tech['firstName']; ?></td>
+            <td><?php echo $tech['lastName']; ?></td>
+            <td><?php echo $tech['email']; ?></td>
+            <td><?php echo $tech['phone']; ?></td>
+            <td><?php echo $tech['password']; ?></td>
             <!-- delete specific record -->
             <td><form method="post">
                     <input type="hidden" name="action"
                             value="delete_technician">
-                    <input type="hidden" name="productCode"
+                    <input type="hidden" name="techID"
                             value="<?php
-                                echo $product['techID'];
+                                echo $tech['techID'];
                             ?>">
                     <input type="submit" value="Delete">
                 </form><!-- end of form -->

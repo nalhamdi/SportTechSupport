@@ -30,7 +30,7 @@
     } else if ($action == 'show_add_form'){
         $productCode = get_products();
         include('product_add.php');
-    } else if($action == 'add_product'){
+    } else if($action == 'add_product'){ //Where is add_product being called?
         $productCode = filter_input(INPUT_POST, 'productCode');
         $name = filter_input(INPUT_POST, 'name');
         $version = filter_input(INPUT_POST, 'version');

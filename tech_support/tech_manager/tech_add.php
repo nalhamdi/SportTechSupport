@@ -3,7 +3,7 @@
 <main>
     <h1>Add Product</h1>
     <form id="aligned" action="index.php" method="post">
-        <input type="hidden" name="action" value="add_product">
+        <input type="hidden" name="action" value="add_technician">
 
         <label for="">TechID: </label>
         <input type="text" name="techID"><br>
@@ -24,11 +24,11 @@
         <input type="password" name="password" required>
 
         <label for="">&nbsp;</label>
-        <input type="submit" value="Add Product"><br>
+        <input type="submit" value="Add Technician"><br>
     </form><!--end of form -->
     <p>
-        <a href="?action=list_products">
-            View Product List</a>
+        <a href="?action=list_technicians">
+            View Technician List</a>
     </p>
 </main><!--end of main -->
 

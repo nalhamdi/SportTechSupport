@@ -10,7 +10,7 @@
         return $products;
     }
 
-    function get_products_by_id($techID){
+    function get_technicians_by_id($techID){
         global $db;
         $query = 'SELECT * FROM technicians
                   WHERE techID = :techID';
@@ -32,7 +32,7 @@
         $statement->closeCursor();
     }
 
-    function add_technicians($productCode, $name, $version, $releaseDate){
+    function add_technician($techID, $firstName, $lastName, $email, $phone, $password){
         global $db;
         $query = 'INSERT INTO technicians
                     (techID, firstName, lastName, email, phone, password)
