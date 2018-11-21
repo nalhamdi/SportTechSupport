@@ -3,25 +3,29 @@
 <main>
     <table>
         <tr>
-            <th>Code</th>
-            <th>Name</th>
-            <th>Version</th>
-            <th>Release Date</th>
+            <th>TechID</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>Password</th>
         </tr>
         <?php foreach ($productCode as $product) : ?>
         <tr>
             <!-- show product records -->
-            <td><?php echo $product['productCode']; ?></td>
-            <td><?php echo $product['name']; ?></td>
-            <td><?php echo $product['version']; ?></td>
-            <td><?php echo $product['releaseDate']; ?></td>
+            <td><?php echo $product['techID']; ?></td>
+            <td><?php echo $product['firstName']; ?></td>
+            <td><?php echo $product['lastName']; ?></td>
+            <td><?php echo $product['email']; ?></td>
+            <td><?php echo $product['phone']; ?></td>
+            <td><?php echo $product['password']; ?></td>
             <!-- delete specific record -->
             <td><form method="post">
                     <input type="hidden" name="action"
-                            value="delete_product">
+                            value="delete_technician">
                     <input type="hidden" name="productCode"
                             value="<?php
-                                echo $product['productCode'];
+                                echo $product['techID'];
                             ?>">
                     <input type="submit" value="Delete">
                 </form><!-- end of form -->
