@@ -4,7 +4,7 @@
     <h1>Add Product</h1>
     <form id="aligned" action="index.php" method="post">
         <input type="hidden" name="action" value="add_product">
-        
+
         <label for="">Code: </label>
         <input type="text" name="productCode"><br>
 

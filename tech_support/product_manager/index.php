@@ -8,7 +8,7 @@
         $action = filter_input(INPUT_GET, 'action');
         if($action == NULL) {
             $action = 'list_products';
-        }            
+        }
     }
 
     if($action == 'list_products'){
@@ -21,7 +21,7 @@
     } else if ($action == 'delete_product'){
         $productCode = filter_input(INPUT_POST, 'productCode');
         if($productCode == NULL){
-            $error = "Missing or incorrect product code";    
+            $error = "Missing or incorrect product code";
             include('../errors/error.php');
         } else {
             delete_product($productCode);
@@ -35,7 +35,7 @@
         $name = filter_input(INPUT_POST, 'name');
         $version = filter_input(INPUT_POST, 'version');
         $releaseDate = filter_input(INPUT_POST, 'releaseDate');
-        if($productCode == NULL || $name == NULL 
+        if($productCode == NULL || $name == NULL
             || $version == NULL || $releaseDate == NULL){
                     $error = "Invalid product data. Try again.";
                     include('../errors/error.php');

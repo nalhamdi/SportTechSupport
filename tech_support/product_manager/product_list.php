@@ -33,7 +33,7 @@
         <!-- <form method="get">
             <input type="submit" name="action" value="show_add_form">
         </form>             -->
-        <a href="?action=show_add_form">Add Technicians</a>
+        <a href="?action=show_add_form">Add Products</a>
     </p>
 </main><!-- end of main -->
 
