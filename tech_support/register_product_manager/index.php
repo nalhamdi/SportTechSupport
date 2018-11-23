@@ -19,7 +19,7 @@
               $error = "Missing or incorrect email";
               include('../errors/error.php');
           } else {
-              get_customers_by_email($email);
+              $result = get_customers_by_email($email);
               header("Location: .");
               include('register_product.php');
           }
