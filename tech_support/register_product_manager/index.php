@@ -24,9 +24,13 @@
             include('../errors/error.php');
         } else {
             $user = get_username($email);
-            $productsName = get_products_name(); 
+            $products = get_products();
             include('product_registration.php');
         }
+    } else if ($action == 'register_product'){
+      $productRegistered = filter_input(INPUT_POST, 'productsName');
+      $custID = get_custID($email);
+
     }
 
 ?>
