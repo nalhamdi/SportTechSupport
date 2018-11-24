@@ -18,7 +18,7 @@
         <!-- product list goes here -->
         <select name="productsName" >
             <?php foreach ($productsName as $productname):?>
-                <option value = "<?php echo $productname; ?>">
+                <option value = "<?php echo $productname["name"]; ?>">
                    <?php echo $productname["name"];?>
                 </option>
               <?php endforeach; ?>
