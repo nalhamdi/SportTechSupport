@@ -10,14 +10,17 @@
         <?php 
             if(isset($user['firstName']) && isset($user['lastName']))
                 echo $user['firstName'] . " " . $user['lastName'];
-            else echo "0 results"  ?>
-            
+            else echo "0 results"  ?>            
         <br> <!-- full name goes here-->
 
-        <label for="">Pro
-        duct: </label>
+        <label for="">Product: </label>
+        
+        <!-- product list goes here -->
         <select name="productCode" >
-            <!-- product list goes here -->
+            <?php 
+                // foreach ($productCode as $product): 
+                // echo "<option value";
+            ?>            
         </select><br>
 
         <label for="">&nbsp;</label>

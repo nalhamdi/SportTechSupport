@@ -29,7 +29,7 @@
         $statement = $db->prepare($query);
         $statement->bindValue(':email', $email);
         $statement->execute();
-        $user = $statement->fetchAll();
+        $user = $statement->fetch();
         $statement->closeCursor();
         return $user;
     }
