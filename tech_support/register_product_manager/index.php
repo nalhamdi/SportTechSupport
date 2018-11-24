@@ -3,73 +3,25 @@
     require '../model/register_product_db.php';
 
     $action = filter_input(INPUT_POST, 'action');
-
     if ($action == NULL) {
         $action = filter_input(INPUT_GET, 'action');
         if($action == NULL) {
-            $action = 'login_customer';
+            $action = 'login_form';
         }
     }
 
-    if($action == 'login_customer'){
+    if ($action == 'login_form') {
         include('customer_login.php');
-    }else if ($action == 'grab_emails'){
-          $email = filter_input(INPUT_POST, 'email');
-          if($email == NULL){
-              $error = "Missing or incorrect email";
-              include('../errors/error.php');
-          } else {
-              $result = get_customers_by_email($email);
-              header("Location: .");
-              include('register_product.php');
-          }
-      }
-
-
-
-
-
-/*
-    $action = filter_input(INPUT_POST, 'action');
-    if ($action == NULL) {
-        $action = filter_input(INPUT_GET, 'action');
-        if($action == NULL) {
-            $action = 'list_products';
-        }
-    }
-
-    if($action == 'list_products'){
-        $productCode = filter_input(INPUT_GET, 'productCode');
-        if($productCode == NULL){
-            $productCode = 1;
-        }
-        $productCode = get_products();
-        include('product_list.php');
-    } else if ($action == 'delete_product'){
-        $productCode = filter_input(INPUT_POST, 'productCode');
-        if($productCode == NULL){
-            $error = "Missing or incorrect product code";
+    } else if ($action == 'user_login') {
+        $email = filter_input(INPUT_POST, 'email');
+        if($email == NULL){
+            $error = "Missing or incorrect email";
             include('../errors/error.php');
         } else {
-            delete_product($productCode);
-            header("Location: .");
+            $email = get_customers_by_email($email);
+            // header("Location: .");
+            include('register_product.php');
         }
-    } else if ($action == 'show_add_form'){
-        $productCode = get_products();
-        include('product_add.php');
-    } else if($action == 'add_product'){ //Where is add_product being called?
-        $productCode = filter_input(INPUT_POST, 'productCode');
-        $name = filter_input(INPUT_POST, 'name');
-        $version = filter_input(INPUT_POST, 'version');
-        $releaseDate = filter_input(INPUT_POST, 'releaseDate');
-        if($productCode == NULL || $name == NULL
-            || $version == NULL || $releaseDate == NULL){
-                    $error = "Invalid product data. Try again.";
-                    include('../errors/error.php');
-        } else {
-            add_product($productCode, $name, $version, $releaseDate);
-            header("Location: .?productCode=$productCode");
+    }
 
-        }
-    }*/
 ?>
