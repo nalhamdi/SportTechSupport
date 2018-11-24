@@ -23,7 +23,7 @@
             $error = "Missing or incorrect email";
             include('../errors/error.php');
         } else {
-            $email = get_customers_by_email($email);
+            $user = get_username($email); //returning null rn
             // header("Location: .");
             include('product_registration.php');
         }

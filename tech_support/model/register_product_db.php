@@ -9,7 +9,7 @@
         $statement->execute();
         $products = $statement->fetchAll();
         $statement->closeCursor();
-        return $products;
+        return $email;
     }
 
     function get_products_code(){
@@ -20,6 +20,18 @@
         $products = $statement->fetchAll();
         $statement->closeCursor();
         return $products;
+    }
+
+    function get_username($email){
+        global $db;
+        $query = 'SELECT firstName, lastName FROM customers
+                  WHERE email = :email';
+        $statement = $db->prepare($query);
+        $statement->bindValue(':email', $email);
+        $statement->execute();
+        $user = $statement->fetchAll();
+        $statement->closeCursor();
+        return $user;
     }
 
 ?>

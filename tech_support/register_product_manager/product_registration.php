@@ -6,9 +6,16 @@
         <input type="hidden" name="action" value="register_product">
 
         <label for="">Customer: </label>
-        <input type="text" name=""><br> <!-- full name goes here-->
+        <input type="hidden" name="">
+        <?php 
+            if(isset($user['firstName']) && isset($user['lastName']))
+                echo $user['firstName'] . " " . $user['lastName'];
+            else echo "0 results"  ?>
+            
+        <br> <!-- full name goes here-->
 
-        <label for="">Product: </label>
+        <label for="">Pro
+        duct: </label>
         <select name="productCode" >
             <!-- product list goes here -->
         </select><br>
