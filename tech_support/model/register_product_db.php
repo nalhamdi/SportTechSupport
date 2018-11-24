@@ -22,9 +22,9 @@
         return $products;
     }
 
-    function get_products_name(){
+    function get_products(){
       global $db;
-      $query = 'SELECT name FROM products';
+      $query = 'SELECT * FROM products';
       $statement = $db->prepare($query);
       $statement->execute();
       $productsName = $statement->fetchAll();
@@ -42,6 +42,32 @@
         $user = $statement->fetch();
         $statement->closeCursor();
         return $user;
+    }
+
+    function get_custID($email){
+      global $db;
+      $query = 'SELECT customerID FROM customers
+                WHERE email = :email';
+      $statement = $db->prepare($query);
+      $statement->bindValue(':email', $email);
+      $statement->execute();
+      $custID = $statement->fetch();
+      $statement->closeCursor();
+      return $custID;
+    }
+
+    function register_product($custID, $productCode, $registrationDate){
+      global $db;
+      $query = 'INSERT INTO registrations(customerID, productCode,
+         registrationDate)
+         VALUES (:custID, :productCode, :registrationDate)' ;
+      $statement = $db->prepare($query);
+      $statement->bindValue(':custID', $custID);
+      $statement->bindValue(':productCode', $productCode);
+      $statement->bindValue(':registrationDate', $registrationDate);
+      $statement->execute();
+      $user = $statement->fetch();
+      $statement->closeCursor();
     }
 
 ?>
