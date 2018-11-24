@@ -7,20 +7,22 @@
 
         <label for="">Customer: </label>
         <input type="hidden" name="">
-        <?php 
+        <?php
             if(isset($user['firstName']) && isset($user['lastName']))
                 echo $user['firstName'] . " " . $user['lastName'];
-            else echo "0 results"  ?>            
+            else echo "0 results"  ?>
         <br> <!-- full name goes here-->
 
         <label for="">Product: </label>
-        
+
         <!-- product list goes here -->
-        <select name="productCode" >
-            <?php 
-                // foreach ($productCode as $product): 
-                // echo "<option value";
-            ?>            
+        <select name="productsName" >
+            <?php foreach ($productsName as $productname):?>
+                <option value = "<?php echo $productname; ?>">
+                   <?php echo $productname["name"];?>
+                </option>
+              <?php endforeach; ?>
+
         </select><br>
 
         <label for="">&nbsp;</label>

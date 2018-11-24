@@ -1,4 +1,4 @@
-<?php 
+<?php
 
     function get_customers_by_email($email){
         global $db;
@@ -20,6 +20,16 @@
         $products = $statement->fetchAll();
         $statement->closeCursor();
         return $products;
+    }
+
+    function get_products_name(){
+      global $db;
+      $query = 'SELECT name FROM products';
+      $statement = $db->prepare($query);
+      $statement->execute();
+      $productsName = $statement->fetchAll();
+      $statement->closeCursor();
+      return $productsName;
     }
 
     function get_username($email){
