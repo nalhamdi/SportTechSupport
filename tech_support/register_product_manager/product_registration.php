@@ -21,12 +21,12 @@
                 <option value = "<?php echo $product["productCode"]; ?>">
                    <?php echo $product["name"];?>
                 </option>
-              <?php endforeach; ?>
+            <?php endforeach; ?>
+        </select><br> 
 
-        </select><br>
-
-        <label for="">&nbsp;</label>
-        <input type="submit" value="Register Product" >
+        <input type="hidden" name="action" value="success">
+        <label for="">&nbsp;</label>  
+        <input type="submit" value="Register Product">     
     </form><!--end of form -->
 </main><!--end of main -->
 

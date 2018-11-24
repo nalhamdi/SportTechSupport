@@ -27,10 +27,9 @@
             $products = get_products();
             include('product_registration.php');
         }
-    } else if ($action == 'register_product'){
-      $productRegistered = filter_input(INPUT_POST, 'productsName');
-      $custID = get_custID($email);
-
+    } else if ($action == 'success'){
+        $itemSelected = $_POST['productsName'];  
+        include('product_successful.php'); 
     }
 
 ?>
