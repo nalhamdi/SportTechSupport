@@ -11,6 +11,11 @@
     }
 
     if ($action == 'login_form') {
+        $email = filter_input(INPUT_GET, 'email');
+        if($email == NULL){
+            $email = 1;
+        }
+        $email = get_customers_by_email($email);
         include('customer_login.php');
     } else if ($action == 'user_login') {
         $email = filter_input(INPUT_POST, 'email');
@@ -20,7 +25,7 @@
         } else {
             $email = get_customers_by_email($email);
             // header("Location: .");
-            include('register_product.php');
+            include('product_registration.php');
         }
     }
 
