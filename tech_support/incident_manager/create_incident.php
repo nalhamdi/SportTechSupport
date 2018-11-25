@@ -16,7 +16,7 @@
     <label for="">Product: </label>
 
     <!-- product list goes here -->
-    <select name="productsName" >
+    <select name="productsName" required>
         <?php foreach ($products as $product):?>
             <option value = "<?php echo $product["productCode"]; ?>">
                <?php echo $product["name"];?>
@@ -25,11 +25,11 @@
     </select><br>
 
     <label for="">Title: </label>
-    <input type="text" name="title"><br>
+    <input type="text" name="title" required><br>
 
     <label for="">Description: </label>
     <input type="hidden">
-    <textarea name="description" cols="40" rows="5"></textarea><br>
+    <textarea name="description" cols="40" rows="5" required></textarea><br>
 
     <label for="">&nbsp;</label>
     <input type="submit" value="Create Incident"><br>

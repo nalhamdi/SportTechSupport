@@ -6,10 +6,10 @@
         <input type="hidden" name="action" value="add_technician">
 
         <label for="">TechID: </label>
-        <input type="text" name="techID"><br>
+        <input type="text" name="techID" required><br>
 
         <label for="">First Name: </label>
-        <input type="text" name="firstName"><br>
+        <input type="text" name="firstName" required><br>
 
         <label for="">Last Name: </label>
         <input type="text" name="lastName" required><br>

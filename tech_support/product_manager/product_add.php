@@ -6,10 +6,10 @@
         <input type="hidden" name="action" value="add_product">
 
         <label for="">Code: </label>
-        <input type="text" name="productCode"><br>
+        <input type="text" name="productCode" required><br>
 
         <label for="">Name: </label>
-        <input type="text" name="name"><br>
+        <input type="text" name="name" required><br>
 
         <label for="">  Version: </label>
         <input type="number" step="0.1" name="version" required><br>

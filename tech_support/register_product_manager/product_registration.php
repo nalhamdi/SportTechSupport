@@ -16,17 +16,17 @@
         <label for="">Product: </label>
 
         <!-- product list goes here -->
-        <select name="productsName" >
+        <select name="productsName" required>
             <?php foreach ($products as $product):?>
                 <option value = "<?php echo $product["productCode"]; ?>">
                    <?php echo $product["name"];?>
                 </option>
             <?php endforeach; ?>
-        </select><br> 
+        </select><br>
 
         <input type="hidden" name="action" value="success">
-        <label for="">&nbsp;</label>  
-        <input type="submit" value="Register Product">     
+        <label for="">&nbsp;</label>
+        <input type="submit" value="Register Product">
     </form><!--end of form -->
 </main><!--end of main -->
 
