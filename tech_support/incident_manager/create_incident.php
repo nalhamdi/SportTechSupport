@@ -26,15 +26,13 @@
 
     <label for="">Title: </label>
     <input type="text" name="title"><br>
-  </br>
 
     <label for="">Description: </label>
-    <textarea name="description" cols="40" rows="5"></textarea>
+    <input type="hidden">
+    <textarea name="description" cols="40" rows="5"></textarea><br>
 
     <label for="">&nbsp;</label>
     <input type="submit" value="Create Incident"><br>
-
-  </br>
 </form>
 </main><!--end of main -->
 
