@@ -1,13 +1,13 @@
 <?php
 
-  function get_customer_by_lastName($LastName)
+  function get_customer_by_lastName($lastName)
   {
     global $db;
-    $query = 'SELECT * FROM customers WHERE LastName = :LastName';
+    $query = 'SELECT * FROM customers WHERE lastName = :lastName';
     $statement = $db -> prepare($query);
-    $statement-> bindValue(':LastName' , $LastName);
+    $statement-> bindValue(':lastName' , $lastName);
     $statement-> execute();
-    $user = $statement->fetch();
+    $user = $statement->fetchAll();
     $statement->closeCursor();
     return $user;
   }
@@ -26,27 +26,44 @@
 
   function get_customers(){
     global $db;
-    $query = 'SELECT * FROM customers';
+    $query = 'SELECT * FROM customers
+              ORDER BY customerID';
     $statement = $db -> prepare($query);
     $statement-> execute();
-    $customers = $statement->fetch();
+    $customers = $statement->fetchAll();
     $statement->closeCursor();
     return $customers;
   }
-  function update_customer($firstName, $lastName, $address, $city, $state, $pc, $cc, $phone, $email, $password){
+
+  function update_customer($custID, $firstName, $lastName, $address, $city,
+         $state, $pc, $cc, $phone, $email, $password){
     global $db;
-    $query = '';
+    $query = 'UPDATE customers
+              SET firstName = :firstName,
+              lastName = :lastName,
+              address = :address,
+              city = :city,
+              state = :state,
+              postalCode = :postalCode,
+              countryCode = :countryCode,
+              phone = :phone,
+              email = :email,
+              password = :password
+              WHERE customerID = :custID ';
     $statement = $db -> prepare($query);
-    $statement-> bindValue(':LastName' , $firstName);
-    $statement-> bindValue(':LastName' , $lastName);
-    $statement-> bindValue(':LastName' , $address);
-    $statement-> bindValue(':LastName' , $city);
-    $statement-> bindValue(':LastName' , $state);
-    $statement-> bindValue(':LastName' , $LastName);
+    $statement-> bindValue(':custID' , $custID);
+    $statement-> bindValue(':firstName' , $firstName);
+    $statement-> bindValue(':lastName' , $lastName);
+    $statement-> bindValue(':address' , $address);
+    $statement-> bindValue(':city' , $city);
+    $statement-> bindValue(':state' , $state);
+    $statement-> bindValue(':postalCode' , $pc);
+    $statement-> bindValue(':countryCode' , $cc);
+    $statement-> bindValue(':phone' , $phone);
+    $statement-> bindValue(':email' , $email);
+    $statement-> bindValue(':password' , $password);
     $statement-> execute();
-    $user = $statement->fetch();
     $statement->closeCursor();
-    return $user;
   }
 
 

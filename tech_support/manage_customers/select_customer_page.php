@@ -2,13 +2,13 @@
 
 <main>
   <h1>Customer Search</h1>
-  <from method ="post">
-    <input type = "hidden" name = "action" value = ""
+  <form method ="post">
+    <input type = "hidden" name = "action" value = "search_last_name">
 
     <label for = "">Last Name: </label>
     <input type = "lastName" name = "lastName" required>
     <input type = "submit" value = "Search">
-  </from>
+  </form>
 
   <table>
     <h1>Result</h1>
@@ -18,23 +18,19 @@
       <th>City</th>
     </tr>
 
-    <?php if($LastName == false){
-      $LastName = $customers;
-    }
-    var_dump($customers);
-      ?>
 
 
+ <?php foreach ($LastName as $customer) : ?>
       <tr>
-        <td><?php echo $LastName['firstName']; ?></td>
-        <td><?php echo $LastName['lastName']; ?></td>
-        <td><?php echo $LastName['city']; ?></td>
+        <td><?php echo $customer['firstName']; ?></td>
+        <td><?php echo $customer['lastName']; ?></td>
+        <td><?php echo $customer['city']; ?></td>
         <td><form method = "post">
           <input type="hidden" name="action"
                   value="view_customer">
           <input type="hidden" name="custID"
                   value="<?php
-                      echo $LasName['customerID'];
+                      echo $customer['customerID'];
                   ?>">
           <input type="submit" value="Select">
         </form>
@@ -42,7 +38,7 @@
         </td>
         <tr>
 
-
+<?php endforeach; ?>
     </table>
 </main>
 <?php include '../view/footer.php';?>
