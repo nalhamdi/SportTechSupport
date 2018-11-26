@@ -23,7 +23,7 @@
  <?php foreach ($LastName as $customer) : ?>
       <tr>
         <td><?php echo $customer['firstName']; ?></td>
-        <td><?php echo $customer['lastName']; ?></td>
+        <td><?php echo $customer['email']; ?></td>
         <td><?php echo $customer['city']; ?></td>
         <td><form method = "post">
           <input type="hidden" name="action"

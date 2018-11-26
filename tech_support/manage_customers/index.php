@@ -60,9 +60,9 @@
         $phone = filter_input(INPUT_POST, 'phone');
         $email = filter_input(INPUT_POST, 'email');
         $password = filter_input(INPUT_POST, 'password');
-        update_customer($custID, $firstName, $lastName, $address, $city,
-                                  $state, $postalCode, $countryCode, $phone,
-                                  $email, $password);
+        update_customer(trim($custID), trim($firstName), trim($lastName), trim($address), trim($city),
+                                  trim($state), trim($postalCode), trim($countryCode), trim($phone),
+                                  trim($email), trim($password));
         $LastName = get_customers();
         include('select_customer_page.php');
         }
